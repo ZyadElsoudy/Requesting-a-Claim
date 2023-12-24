@@ -4,6 +4,6 @@ describe('Requesting a Home Claim', () => {
     it('Submitting a Home Claim Successfully', () => {
         cy.visit('https://bestinsurance.trumobile.dev');
         loginpage.loginWithValidCredentials();
-        //requestclaim.RequestingClaim();
+        requestclaim.RequestingClaim();
     })
 })
