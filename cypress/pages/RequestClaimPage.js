@@ -44,7 +44,10 @@ class requestclaim{
         return cy.contains('Submit');
     }
     get TrueIcon(){
-        return cy.get('.class="mat-icon notranslate mat-icon-no-color"');
+        return cy.get('#check');
+    }
+    get backbtn(){
+        return cy.get('button[class="mat-focus-indicator mat-raised-button mat-button-base mat-primary"]');
     }
     RequestingClaim(){
         this.Startclaim.click({force:true});
@@ -57,6 +60,8 @@ class requestclaim{
         this.selectedDate.click();
         this.attachImage.attachFile('img.jpg');
         this.Submitbtn.click();
-        this.TrueIcon.should('be.visible') }
+        this.TrueIcon.should('be.visible');
+        this.backbtn.should('be.visible');
+}
 }
 module.exports=new requestclaim();
