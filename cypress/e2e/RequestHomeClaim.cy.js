@@ -6,6 +6,7 @@ describe('Requesting a Home Claim', () => {
         cy.visit('https://bestinsurance.trumobile.dev');
         loginpage.loginWithValidCredentials();
         requestclaim.RequestingClaim();
+        console.log("Test Success");
         /*if (Cypress.env('REPORT')) {
             after(() => {
               const reportDir = 'cypress/reports';
