@@ -35,7 +35,7 @@ class requestclaim{
         return cy.get('input[placeholder="YYYY-MM-DD"]');
     }
     get selectedDate(){
-        return cy.get('div[class="ant-picker-cell-inner"]').contains('13');
+        return cy.get('div[class="ant-picker-cell-inner"]').contains('1');
     }
     get attachImage (){
         return cy.get('input[type="file"]').eq(0);

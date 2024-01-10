@@ -11,6 +11,8 @@ videoCompression: 32,
     overwrite: false,
     html: true,
     json: true,
+    
+
   },
   defaultCommandTimeout: 60000,
   pageLoadTimeout:120000,
@@ -38,6 +40,7 @@ videoCompression: 32,
     "chromeWebSecurity": false,
     "viewportHeight": 1080,
     "viewportWidth": 1920,
+    "browser":"chrome"
     
     
   },

@@ -21,13 +21,26 @@ class loginpage{
     get Skipbtn(){
         return cy.get('.introjs-skipbutton').should('be.visible');
     }
+    get cookieVal(){
+        return cy.getCookie('MUID');
+    }
+    cookie(cookieName, value){
+        cy.setCookie(cookieName,value);
+    }
     loginWithValidCredentials(){
         //this.elements.signinbtn.click();
         this.signinbtn.click();
-        this.username.should('be.visible').type('jane.doe@trufla.com');
-        this.password.type('Demo@12345');
+        /*this.username.should('be.visible').type('jane.doe@trufla.com');
+        this.password.type('Demo@12345');*/
+        cy.get('@testData').its('users').each((user) => {
+            this.username.should('be.visible').type(user.email);
+            this.password.type(user.password);
+
+        })
         this.loginBtn.click();
         this.Skipbtn.click();
+        this.cookieVal.log();
+        this.cookie("QA", "Val");
         /*this.elements.username.should('be.visible').type('jane.doe@trufla.com');
         this.elements.password.type('Demo@12345');
         this.elements.loginBtn.click();
