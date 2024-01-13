@@ -5,14 +5,12 @@ module.exports = defineConfig({
   video: true,
 videoCompression: 32,
 //videoUploadOnPasses: true,
-  reporter: 'cypress-mochawesome-reporter',
+reporter: 'cypress-mochawesome-reporter', //for HTML Report
   reporterOptions: {
-    reportDir: 'cypress/results',
-    overwrite: false,
+    reportDir: 'cypress/reporters', //setting the direction
+    overwrite: true,
     html: true,
-    json: true,
-    
-
+    json: false,
   },
   defaultCommandTimeout: 60000,
   pageLoadTimeout:120000,
@@ -21,7 +19,7 @@ videoCompression: 32,
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
-      on('after:spec', (spec, results) => {
+      /*on('after:spec', (spec, results) => {
         if (results && results.video) {
           // Do we have failures for any retry attempts?
           const failures = results.tests.some((test) =>
@@ -32,9 +30,9 @@ videoCompression: 32,
             fs.unlinkSync(results.video)
           }
         }
-      })
+      })*/
     
-      require('cypress-mochawesome-reporter/plugin')(on);
+     require('cypress-mochawesome-reporter/plugin')(on);
      
     },
     "chromeWebSecurity": false,

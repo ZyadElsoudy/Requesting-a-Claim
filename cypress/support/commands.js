@@ -26,7 +26,7 @@
 Cypress.on('uncaught:exception', (err, runnable) => {
     // Customize the behavior when an uncaught exception occurs
     // For example, log the error or take a screenshot
-   // console.error('Uncaught Exception:', err.message);
+   console.error('Uncaught Exception:', err.message);
     // You can also take a screenshot or perform other actions here
     // cy.screenshot();
     
