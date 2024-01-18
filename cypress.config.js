@@ -38,7 +38,7 @@ reporter: 'cypress-mochawesome-reporter', //for HTML Report
     "chromeWebSecurity": false,
     "viewportHeight": 1080,
     "viewportWidth": 1920,
-    "browser":"chrome"
+    "browser":"Chrome"
     
     
   },
